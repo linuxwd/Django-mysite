@@ -17,7 +17,7 @@ def math(request,a,b):
     d = a - b
     p = a * b
     q = a / b
-    t = template.Template('<html>sum={{s}}'
-                          '<br>dif={{d}}<br>pro={{p}}<br>quo={{q}}</html>')
-    c = template.Context({'s':s,'d':d,'p':p,'q':q})
+    with open('templates/math.html', 'r') as reader:
+        t = template.Template(reader.read())
+    c = template.Context({'s': s, 'd': d, 'p': p, 'q': q})
     return HttpResponse(t.render(c))
