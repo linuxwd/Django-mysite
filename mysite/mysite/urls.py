@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from .views import here,add,math
+from .views import here,add,math,menu
+
 admin.autodiscover()
 
 urlpatterns = [
@@ -23,4 +24,5 @@ urlpatterns = [
     url(r'^here/$',here),
     url(r'^(\d{1,2})/plus/(\d{1,2})/$', add),
     url(r'^(\d{1,2})/math/(\d{1,2})/$', math),
+    url(r'^menu/$',menu),
 ]
