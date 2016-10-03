@@ -19,4 +19,4 @@ def math(request,a,b):
     d = a - b
     p = a * b
     q = a / b
-    return render_to_response('math.html', {'s': s, 'd': d, 'p': p, 'q': q})
+    return render_to_response('math.html', locals())
