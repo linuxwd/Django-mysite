@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from .views import here,add,math,menu
+from .views import here,add,math
+from restaurants.views import menu
 
 admin.autodiscover()
 
