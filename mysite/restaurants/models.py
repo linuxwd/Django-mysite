@@ -10,6 +10,9 @@ class Restaurant(models.Model):
     #列名address，字符型，最大长度50，允许该字段为空（blank）
     address = models.CharField(max_length=50,blank=True)
 
+    def __str__(self):
+        return self.name
+
 class Food(models.Model):
     #列名name，字符型，最大长度20
     name = models.CharField(max_length=20)
@@ -21,3 +24,6 @@ class Food(models.Model):
     is_spicy = models.BooleanField(default=False)
     #列名restaurant，外键只想Restaurant表
     restaurant = models.ForeignKey(Restaurant)
+
+    def __str__(self):
+        return self.name
